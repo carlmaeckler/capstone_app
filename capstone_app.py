@@ -31,7 +31,7 @@ def load_iw_data():
     info_weather = pd.read_csv("weather_info_inputs_normalized.csv").drop("Unnamed: 0", axis = 1)
     return info_weather
 
-
+@st.cache()
 def load_pred_data():
     pred_data = pd.read_csv("pred_data.csv").drop("Unnamed: 0", axis = 1)
     return pred_data
