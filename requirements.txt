@@ -1,6 +1,5 @@
-matplotlib
 pandas
-sklearn
 Image
+matplotlib
 numpy
 statsmodels.api
