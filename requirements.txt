@@ -2,4 +2,3 @@ pandas
 Image
 matplotlib
 numpy
-statsmodels.api
