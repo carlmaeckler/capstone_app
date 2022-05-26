@@ -109,7 +109,7 @@ with st.sidebar:
         submit_button = st.form_submit_button(label="Search")
 
     if submit_button:
-
+    
 #Output
 
     #Show picture of selected route
@@ -286,7 +286,8 @@ with st.sidebar:
 
 
 
-
+    else:
+        st.write("Please insert your data in the sidebar on the left ")
 
 
 
