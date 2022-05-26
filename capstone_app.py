@@ -287,7 +287,7 @@ with st.sidebar:
 
 
     else:
-        row2_col1.write("Please insert your data in the sidebar on the left ")
+        row2_col1.write("👈 Please insert your data in the sidebar on the left ")
 
 
 
