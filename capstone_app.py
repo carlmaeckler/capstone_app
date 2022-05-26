@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import pickle
 from PIL import Image
 import re
-from matplotlib.ticker import MaxNLocator
 import numpy as np
 
 
