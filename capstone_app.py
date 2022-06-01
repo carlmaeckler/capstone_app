@@ -7,6 +7,13 @@ from PIL import Image
 import re
 import numpy as np
 
+#Defining general properties & Layout
+st.set_page_config(
+    page_title= "🚴PCM🚴",
+    page_icon = "🚴",
+    layout="wide"
+    )
+
 ###Data&Model load functions
 def load_model():
     filename = "model_final.sav"
@@ -42,13 +49,6 @@ vae = info_weather.groupby("Tour").get_group("vuelta").sort_values("Date")
 teams = list(riders["team"].unique())
 teams.sort()
 
-#Defining general properties & Layout
-
-st.set_page_config(
-    page_title= "🚴PCM🚴",
-    page_icon = "🚴",
-    layout="wide"
-    )
 
 row1_col1, row1_col2 = st.columns((1,1))
 row2_col1, row2_col2 = st.columns((1,1))
