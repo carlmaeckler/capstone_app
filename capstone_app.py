@@ -1,4 +1,4 @@
-#Imports
+###Imports
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,15 +7,7 @@ from PIL import Image
 import re
 import numpy as np
 
-
-#Defining general properties
-st.set_page_config(
-    page_title= "🚴PCM🚴",
-    page_icon = "🚴",
-    layout="wide"
-    )
-
-#Data&Model load functions
+###Data&Model load functions
 def load_model():
     filename = "model_final.sav"
     loaded_model = pickle.load(open(filename,"rb"))
@@ -36,15 +28,6 @@ def load_pred_data():
     pred_data = pd.read_csv("pred_data.csv").drop("Unnamed: 0", axis = 1)
     return pred_data
 
-
-# Layout
-row1_col1, row1_col2 = st.columns((1,1))
-row2_col1, row2_col2 = st.columns((1,1))
-row3_col1, row3_col2 = st.columns((1,1))
-row4_col1, row4_col2 = st.columns((1,1))
-row1_col2.empty()
-
-
 #data load
 riders = load_rider_data()
 info_weather = load_iw_data()
@@ -59,6 +42,19 @@ vae = info_weather.groupby("Tour").get_group("vuelta").sort_values("Date")
 teams = list(riders["team"].unique())
 teams.sort()
 
+#Defining general properties & Layout
+
+st.set_page_config(
+    page_title= "🚴PCM🚴",
+    page_icon = "🚴",
+    layout="wide"
+    )
+
+row1_col1, row1_col2 = st.columns((1,1))
+row2_col1, row2_col2 = st.columns((1,1))
+row3_col1, row3_col2 = st.columns((1,1))
+row4_col1, row4_col2 = st.columns((1,1))
+row1_col2.empty()
 
 ###Sidebar for user input
 with st.sidebar:
